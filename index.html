@@ -10,21 +10,58 @@
 </head>
 
 <body>
+    <div class="page-aurora" aria-hidden="true"></div>
+
     <main class="app-shell">
-        <section class="hero-card">
-            <h1>Dog Lover Gallery</h1>
-            <p>Choose a breed and enjoy a smooth, animated image gallery.</p>
+        <section class="hero-card glowing-edge">
+            <div class="hero-content">
+                <p class="eyebrow">Interactive Experience</p>
+                <h1>Dog Lover Gallery</h1>
+                <p class="hero-subtitle">Explore stunning dog photos with rich animations and full-screen zoom preview.</p>
+            </div>
 
             <div id="container1" class="controls-row">
-                <select id="breed" name="breed" aria-label="Choose breed"></select>
-                <select id="sub-breed" name="sub-breed" aria-label="Choose sub-breed"></select>
-                <button id="get-images-button" type="button">Get Images</button>
+                <div class="field-wrap">
+                    <label for="breed">Breed</label>
+                    <select id="breed" name="breed" aria-label="Choose breed"></select>
+                </div>
+
+                <div class="field-wrap">
+                    <label for="sub-breed">Sub-breed</label>
+                    <select id="sub-breed" name="sub-breed" aria-label="Choose sub-breed"></select>
+                </div>
+
+                <button id="get-images-button" type="button">Load Gallery</button>
             </div>
+
             <div id="status" class="status-text" aria-live="polite"></div>
         </section>
 
-        <section id="container2" class="gallery-grid"></section>
+        <section class="gallery-shell">
+            <header class="gallery-head">
+                <h2>Photo Collection</h2>
+                <p>Tap any image to open zoom preview.</p>
+            </header>
+            <section id="container2" class="gallery-grid"></section>
+        </section>
     </main>
+
+    <section id="preview-modal" class="preview-modal" aria-hidden="true" role="dialog" aria-label="Dog image preview">
+        <div class="preview-content glowing-edge">
+            <button id="preview-close" class="icon-btn close-btn" type="button" aria-label="Close preview">✕</button>
+
+            <div class="preview-toolbar">
+                <button id="zoom-out" class="icon-btn" type="button" aria-label="Zoom out">−</button>
+                <span id="zoom-level">100%</span>
+                <button id="zoom-in" class="icon-btn" type="button" aria-label="Zoom in">＋</button>
+                <button id="zoom-reset" class="icon-btn" type="button" aria-label="Reset zoom">Reset</button>
+            </div>
+
+            <div class="preview-stage">
+                <img id="preview-image" src="" alt="Dog preview image">
+            </div>
+        </div>
+    </section>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
