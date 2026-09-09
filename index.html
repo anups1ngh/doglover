@@ -10,16 +10,22 @@
 </head>
 
 <body>
-    <div id="container1">
-        <select id="breed" name="breed">
-        </select>
-        <select id="sub-breed" name="sub-breed">
-        </select>
-        <button id="get-images-button">Get Images</button>
-    </div>
-    <div id="container2">
+    <main class="app-shell">
+        <section class="hero-card">
+            <h1>Dog Lover Gallery</h1>
+            <p>Choose a breed and enjoy a smooth, animated image gallery.</p>
 
-    </div>
+            <div id="container1" class="controls-row">
+                <select id="breed" name="breed" aria-label="Choose breed"></select>
+                <select id="sub-breed" name="sub-breed" aria-label="Choose sub-breed"></select>
+                <button id="get-images-button" type="button">Get Images</button>
+            </div>
+            <div id="status" class="status-text" aria-live="polite"></div>
+        </section>
+
+        <section id="container2" class="gallery-grid"></section>
+    </main>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
 
